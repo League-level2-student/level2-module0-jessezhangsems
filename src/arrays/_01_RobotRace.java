@@ -1,5 +1,7 @@
 package arrays;
 
+import javax.swing.JOptionPane;
+
 import org.jointheleague.graphical.robot.Robot;
 
 public class _01_RobotRace {
@@ -11,8 +13,18 @@ public static void main(String[] args) {
 		array[i].setX(i*20+100);
 		array[i].setY(400);
 	}
-	for (int i = 0; i < array.length; i++) {
-		
+	boolean raceGoing=true;
+	
+		while (raceGoing==true) {
+			for (int i = 0; i < array.length; i++) {
+				array[i].move(48);
+				if(array[i].getY()<0) {
+					JOptionPane.showMessageDialog(null, "Party time ");
+					raceGoing=false;
+					break;
+				}
+			
+		}
 	}
 }
 	//2. create an array of 5 robots.
